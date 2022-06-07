@@ -1,0 +1,25 @@
+@font-face {
+     font-family: 'Neue';
+     font-style: normal;
+     font-weight: 700;
+     src: local('Neue'), url('../fonts/NeueHaasDisplayBold.ttf') format("truetype");
+ }
+ @font-face {
+     font-family: 'Neue';
+     font-style: normal;
+     font-weight: 500;
+     src: local('Neue'), url('../fonts/NeueHaasDisplayMediu.ttf') format("truetype");
+ }
+ @font-face {
+     font-family: 'Neue';
+     font-style: normal;
+     font-weight: 300;
+     src: local('Neue'), url('../fonts/NeueHaasDisplayRoman.ttf') format("truetype");
+ }
+
+ @font-face {
+    font-family: 'Playfair';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Playfair'), url('../fonts/PlayfairDisplay-BoldItalic.ttf') format("truetype");
+}
