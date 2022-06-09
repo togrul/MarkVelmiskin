@@ -1,14 +1,14 @@
 <x-layout :social=false>
      <x-slot name="flex_class">standart</x-slot>
 
-     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 sm:gap-1 mt-[97px]">
+     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 sm:gap-1 border-b border-dashed py-16 mt-[20px]" style="border-color:rgba(255, 255, 255, 0.08)">
           <h2 class="text-xl sm:text-3xl lg:text-[64px] leading-10 font-medium text-white">{{$project->title}}</h2>
           <p class="text-base font-light text-white opacity-[45%]">
                {{strip_tags($project->body)}}
           </p>
      </div>
 
-     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 lg:grid-cols-4 sm:gap-1 mt-[97px]">
+     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 lg:grid-cols-4 sm:gap-1 py-16">
           <div class="flex flex-col space-y-1">
                <h5 class="font-bold text-white opacity-[45%] text-[12px]">
                     Timeline
@@ -47,12 +47,12 @@
         
      </div>
 
-     <div class="grid grid-cols-1 mt-[97px]">
+     <div class="grid grid-cols-1">
           <img src="{{'/storage/'.$project->image}}" alt="" class="h-[480px]">
      </div>
 
      @if(!@empty($project->about))
-     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 sm:gap-1 mt-[97px]">
+     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 sm:gap-1 border-b border-dashed py-16 mt-[20px]" style="border-color:rgba(255, 255, 255, 0.08)">
           <h2 class="text-xl sm:text-3xl lg:text-[64px] leading-10 font-medium text-white">About</h2>
           <p class="text-base font-light text-white opacity-[45%]">
                {{strip_tags($project->about)}}
@@ -61,7 +61,7 @@
      @endif
 
      @if(!empty($project->goals))
-     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 sm:gap-1 mt-[97px]">
+     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 sm:gap-1 border-b border-dashed py-16 mt-[20px]" style="border-color:rgba(255, 255, 255, 0.08)">
           <h2 class="text-xl sm:text-3xl lg:text-[64px] leading-10 font-medium text-white">Goals</h2>
           <p class="text-base font-light text-white opacity-[45%]">
                {{strip_tags($project->goals)}}
@@ -69,7 +69,7 @@
      </div>
      @endif
 
-     <div class="grid grid-cols-1 space-y-8 sm:space-y-12 sm:gap-1 mt-[97px]">
+     <div class="grid grid-cols-1 space-y-8 sm:space-y-12 sm:gap-1 border-b border-dashed py-16 mt-[20px]" style="border-color:rgba(255, 255, 255, 0.08)">
           <h2 class="text-xl sm:text-3xl lg:text-[64px] leading-10 font-medium text-white">
                {{$project->is_mobile ? "Responsive design":"Web version"}}
           </h2>
@@ -79,16 +79,18 @@
                @endphp
                @foreach ($images as $list)
                     <div class="item">
-                         <img src="{{'/storage/'.$list}}" 
-                         @class([
-                              $project->is_mobile => 'max-h-[588px] max-w-[290px]'
-                         ]) alt="">
+                         <a target="_blank" href="{{'/storage/'.$list}}">
+                              <img src="{{'/storage/'.$list}}" 
+                              @class([
+                                   $project->is_mobile => 'max-h-[588px] max-w-[290px]'
+                              ]) alt="">
+                         </a>
                     </div>
                @endforeach
            </div>
      </div>
 
-     <div class="grid grid-cols-1 space-y-8 sm:space-y-4 sm:grid-cols-4 sm:gap-1 mt-[97px]">
+     <div class="grid grid-cols-1 space-y-8 sm:space-y-4 sm:grid-cols-4 sm:gap-1 mt-[20px] pt-16">
           <h2 class="text-xl sm:text-3xl lg:text-[64px] leading-10 font-medium text-white col-span-3">Other projects</h2>
           <p class="flex space-x-4">
                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +102,7 @@
           </p>
      </div>
 
-     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 sm:gap-1 mt-[97px]">
+     <div class="grid grid-cols-1 space-y-8 sm:space-y-0 sm:grid-cols-2 sm:gap-1 border-b border-dashed py-16" style="border-color:rgba(255, 255, 255, 0.08)">
           @foreach ($projects as $project)
           <x-project
                title="{{$project->title}}"
@@ -113,7 +115,7 @@
           @endforeach
      </div>
 
-    <div class="mt-[64px]">
+    <div class="py-16">
      <x-footer-text>
           <span class="underline text-white">
                {{setting('site.copyright')}}

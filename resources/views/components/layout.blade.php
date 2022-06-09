@@ -10,7 +10,7 @@
 
   <title>Mark Velmiskin</title>
 
-  <meta name="description" content="{{setting('site.description')}}"> --}}
+  <meta name="description" content="{{setting('site.description')}}">
   <meta name='keywords' content='{{setting('site.keywords')}}' />
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -43,7 +43,7 @@
 		<div class="bg-line4"></div>
 		<div class="bg-line5"></div>
 	</div>
-  <div class="container px-[10px] mx-auto py-[71px] z-50 h-[100vh] relative flex flex-col {{ $flex_class ?? '' == "standart" ? '': 'justify-between' }}">
+  <div class="container px-[10px] mx-auto py-[71px] z-50 h-[100vh] relative flex flex-col {{ !empty($flex_class) == "standart" ? '': 'justify-between' }}">
     @include('layouts.header')
     {{ $slot }}
     @if($social)
